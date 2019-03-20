@@ -14,7 +14,7 @@ public class JavaIOTester {
 
         String someData = "The capital of New York is Albany";
         String fileName = "NewYorkCapital";
-        Path path = Paths.get("/home/jake/Tutoring/src/Students/" + fileName);
+        Path path = Paths.get("/home/jake/IdeaProjects/Tutoring/src/main/java/Students/");
 
         if (Files.notExists(path)) {
             try {
@@ -24,11 +24,11 @@ public class JavaIOTester {
             }
         }
 
-        try {
-            Files.writeString(path, someData);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Files.writeString(path, someData);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
     }
 
