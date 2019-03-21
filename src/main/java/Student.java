@@ -1,22 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
 
     private final String name;
     private final int grade;
-    private Subject[] classes;
+    private ArrayList<Subject> classes;
     private boolean[][] freeTimes;
     private boolean needsHelp;
 
 
-    public Student(String name, int grade, Subject[] classes, boolean[][] freeTimes, boolean needsHelp){
+    public Student(String name, int grade, ArrayList<Subject> classes, boolean needsHelp){
         this.name = name;
         this.grade = grade;
         this.classes = classes;
-        this.freeTimes = freeTimes;
         this.needsHelp = needsHelp;
+
+        freeTimes = new boolean[7][];
+
+        for(int x = 0; x < 5; x++) {
+            freeTimes[x] = new boolean[10];
+        }
+        for(int x = 5; x < 7; x++) {
+            freeTimes[x] = new boolean[3];
+        }
     }
 
 
-    public void setClasses(Subject[] classes) {
+    public void addClass(Subject s) {
+        classes.add(s);
+    }
+
+    public void setClasses(ArrayList<Subject> classes) {
         this.classes = classes;
     }
 
@@ -37,7 +52,7 @@ public class Student {
         return name;
     }
 
-    public Subject[] getClasses() {
+    public ArrayList<Subject> getClasses() {
         return classes;
     }
 
