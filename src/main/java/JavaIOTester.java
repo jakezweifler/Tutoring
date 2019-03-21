@@ -13,8 +13,8 @@ public class JavaIOTester {
     private static void example1() {
 
         String someData = "The capital of New York is Albany";
-        String fileName = "NewYorkCapital";
-        Path path = Paths.get("/home/jake/IdeaProjects/Tutoring/src/main/java/Students/");
+        String fileName = "NewYorkCapital.txt";
+        Path path = Paths.get("/home/jake/IdeaProjects/Tutoring/src/main/java/Students/NewYorkCapital");
 
         if (Files.notExists(path)) {
             try {
@@ -24,11 +24,11 @@ public class JavaIOTester {
             }
         }
 
-//        try {
-//            Files.writeString(path, someData);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Files.writeString(path, someData);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
